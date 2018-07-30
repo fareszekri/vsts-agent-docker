@@ -5,6 +5,6 @@ RUN mkdir C:\BuildAgent
 WORKDIR C:/BuildAgent
 COPY ./Start.* ./installChocolatey.ps1 ./
 ENV chocolateyUseWindowsCompression=false
-RUN @powershell installChocolatey.ps1 
+RUN @powershell ./installChocolatey.ps1 
 
 CMD ["Start.cmd"]
