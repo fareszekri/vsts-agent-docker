@@ -3,6 +3,8 @@ ENV WINDOWS_IMAGE_VERSION=sac2016
 
 RUN mkdir C:\BuildAgent
 WORKDIR C:/BuildAgent
-COPY ./Start.* ./
+COPY ./Start.* ./installChocolatey.ps1 ./
+ENV chocolateyUseWindowsCompression=false
+RUN ./installChocolatey.ps1 
 
 CMD ["Start.cmd"]
